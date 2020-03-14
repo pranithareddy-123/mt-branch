@@ -1,0 +1,92 @@
+
+
+<style>
+
+  .bg {
+ 
+ 
+ 
+   background-image: url("https://media.istockphoto.com/vectors/widescreen-abstract-financial-chart-with-3d-uptrend-line-graph-arrow-vector-id1133625414");
+ 
+ 
+ 
+   background-repeat: no-repeat;
+ 
+ 
+ 
+   background-size: 100% 140%;
+ 
+ 
+ 
+  }
+ 
+ </style>
+
+
+<body>
+  <div class="bg">
+    <div class="container">
+
+
+
+<div class="panel panel-default">
+
+  <div class="panel-body">
+
+    <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+
+    [dtTrigger]="dtTrigger" >
+
+      <thead class="thead-light">
+
+        <tr>
+          <th>id</th>
+          <th>UserName</th>
+<th>Password</th>
+<th>Confirmed</th>
+<th>Email</th>
+<th>UserType</th>
+<th>MobileNumber</th>
+
+</tr>
+</thead>
+
+      <tbody>
+
+         <tr *ngFor="let user of userList ">
+          <td>{{user.id}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.confirmed}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.userType}}</td>
+      <td>{{user.mobileNumber}}</td>
+      <td><button (click)="deleteuser(user)" class="btn btn-danger">Delete</button> </td>
+      <td><button (click)="updateUser(user)" class="btn btn-primary">Update</button> </td>
+             
+
+          
+         </tr>
+
+      </tbody><br>
+
+    </table>
+    <div class="text-center"> 
+    <a routerLink="/signup" class="btn btn-link " role="button">add</a>
+    <a routerLink="/home" class="btn btn-link " role="button">back</a>
+    </div>
+  </div>
+
+</div>
+</div>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+</div>
+</body>
+
+
+ 
+
+
+

@@ -1,0 +1,80 @@
+<style>
+
+  .bg {
+ 
+ 
+ 
+   background-image: url("https://media.istockphoto.com/vectors/widescreen-abstract-financial-chart-with-3d-uptrend-line-graph-arrow-vector-id1133625414");
+ 
+ 
+ 
+   background-repeat: no-repeat;
+ 
+ 
+ 
+   background-size: 100% 140%;
+ 
+ 
+ 
+  }
+ 
+ </style>
+
+<body>
+  <div class="bg">
+
+
+<br><br><br>
+<div class="container">
+<div class="panel panel-default">
+
+    <div class="panel-body">
+  
+      <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+  
+      [dtTrigger]="dtTrigger" >
+  
+        <thead class="thead-light">
+  
+          <tr>
+            <th>id</th>
+            <th>StockExchange</th>
+            <th>Brief</th>
+            <th>ContactAddress</th>
+            <th>Remarks</th>
+            
+
+  </tr>
+  </thead>
+  
+        <tbody>
+  
+           <tr *ngFor="let exchange of exchangelist">
+            <td>{{exchange.id}}</td>
+            <td>{{exchange.stockExchange}}</td>
+            <td>{{exchange.brief}}</td>
+            <td>{{exchange.contactAddress}}</td>
+            <td>{{exchange.remarks}}</td>
+
+
+            <td><button (click)="updateStockexchange(exchange)" class="btn btn-primary">Update</button> </td>
+            <td><button (click)="deleteStockexchange(exchange)" class="btn btn-danger">Delete</button> </td>
+           
+    </tr>
+</tbody><br>
+  </table>
+
+  <div class="text-center"> 
+    <a routerLink="/exchange" class="btn btn-link " role="button">add</a>
+    <a routerLink="/home" class="btn btn-link " role="button">back</a>
+</div>
+</div>
+</div>
+  </div>
+  <br><br><br>  <br><br><br>  <br><br><br>
+  </div>
+  </body>
+  
+   
+  
+    

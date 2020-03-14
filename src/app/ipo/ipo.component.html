@@ -1,0 +1,155 @@
+<nav class="navbar navbar-expand-sm bg-info navbar-light">
+  <ul class="navbar-nav ml-auto ">
+        <li class="nav-item ">
+          <a class="nav-link" href="\import">IMPORT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="managecompany">MANAGE COMPANIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="exchange">MANAGE STOCK EXCHANGE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ipo">UPDATE IPO DETAILS</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link" href="home">LOGOUT</a>
+            </li>
+       </ul>
+    </nav>
+    <body  style="background-image: url(https://i.pinimg.com/originals/d7/59/b5/d759b559ad669f9e199f1aaaa381a8ab.jpg);">
+<br><br>
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+        <div class="card card-signin my-10">
+      
+         <div class="card-body">
+      
+          <h5 class="card-title text-center">Create Ipo</h5>
+      
+      
+
+
+<div class="container-fluid">
+<div class="bg-img">
+    <div class="row">
+  <div class="col-lg-10 mx-auto">
+   
+    <br>
+  <form [formGroup]="iposaveform" #saveIpo1 (ngSubmit)="saveIpo(saveIpo1)">
+   <div class="form-group">
+        <label for="id"><b>id</b></label>
+  <input type="number" autofocus class="form-control" formControlName="id" data-toggle="tooltip"
+         data-placement="right" title="Enter id ">
+         <div class="alert alert-danger" *ngIf="(iposaveform.get('id').touched) && (iposaveform.get('id').invalid)" style="margin-top: 5px;">
+          <span *ngIf="iposaveform.get('id').errors.required">id is Required</span>
+         <span *ngIf="iposaveform.get('id').errors.minlength">
+                    MinLength Error
+   </span>
+   </div>
+    </div>
+   
+   
+   
+        <div class="form-group">
+   <label for="companyName"><b>CompanyName</b></label>
+   <input type="text" class="form-control" formControlName="companyName" data-toggle="tooltip"
+          data-placement="right" title="Enter Company Name">
+    <div class="alert alert-danger" *ngIf="(iposaveform.get('companyName').touched) && (iposaveform.get('companyName').invalid)" style="margin-top: 5px;">
+          <span *ngIf="iposaveform.get('companyName').errors.required">Company Name is Required</span>
+          <span *ngIf="iposaveform.get('companyName').errors.minlength">
+   
+           MinLength Error
+          </span>
+         </div>
+    </div>
+   
+   
+        <div class="form-group">
+   
+         <label for="stockExchange"><b>Stock Exchange</b></label>
+   <input type="text" class="form-control" formControlName="stockExchange" data-toggle="tooltip"
+   data-placement="right" title="Enter ipo">
+   <div class="alert alert-danger" *ngIf="(iposaveform.get('stockExchange').touched) && (iposaveform.get('stockExchange').invalid)" style="margin-top: 5px;">
+  <span *ngIf="iposaveform.get('stockExchange').errors.required">stock Exchange is Required</span>
+   <span *ngIf="iposaveform.get('stockExchange').errors.minlength">
+   
+           Invalid  Format
+   
+          </span>
+  </div>
+         </div>
+         <div class="form-group">
+          <label for="priceperShare"><b>Pricepershare</b></label>
+          <input type="number" class="form-control" formControlName="priceperShare" data-toggle="tooltip"
+          data-placement="right" title="Enter price ">
+           <div class="alert alert-danger" *ngIf="(iposaveform.get('priceperShare').touched) && (iposaveform.get('priceperShare').invalid)" style="margin-top: 5px;">
+         <span *ngIf="iposaveform.get('priceperShare').errors.required">price is Required</span>
+           </div>
+           
+                </div>
+   
+         
+         <div class="form-group">
+   
+          <label for="totalnumberofShares"><b>Total Number Of Shares</b></label>
+   <input type="number" class="form-control" formControlName="totalnumberofShares" data-toggle="tooltip" data-placement="right"
+   title="Enter totalnumberofShares">
+   
+  <div class="alert alert-danger" *ngIf="(iposaveform.get('totalnumberofShares').touched) && (iposaveform.get('totalnumberofShares').invalid)" style="margin-top: 5px;">
+   <span *ngIf="iposaveform.get('totalnumberofShares').errors.required"> Total number of shares is Required</span>
+   <span *ngIf="iposaveform.get('totalnumberofShares').errors.minlength">
+  Invalid  Format
+   
+           </span>
+  </div>
+    </div>
+    <div class="form-group">
+   
+      <label for="remarks"><b>Remarks</b></label>
+<input type="text" class="form-control" formControlName="remarks" data-toggle="tooltip" data-placement="right"
+title="Enter remarks">
+
+<div class="alert alert-danger" *ngIf="(iposaveform.get('remarks').touched) && (iposaveform.get('remarks').invalid)" style="margin-top: 5px;">
+<span *ngIf="iposaveform.get('remarks').errors.required"> remarks is Required</span>
+<span *ngIf="iposaveform.get('remarks').errors.minlength">
+Invalid Email Format
+
+       </span>
+</div>
+</div>
+    <div class="form-group">
+   
+        <label for="opendatetime"><b>opendatetime</b></label>
+ <input type="date" class="form-control" formControlName="opendatetime" data-toggle="tooltip" data-placement="right"
+ title="Enter opendatetime">
+ 
+<div class="alert alert-danger" *ngIf="(iposaveform.get('opendatetime').touched) && (iposaveform.get('opendatetime').invalid)" style="margin-top: 5px;">
+ <span *ngIf="iposaveform.get('opendatetime').errors.required"> opendatetime is Required</span>
+ <span *ngIf="iposaveform.get('opendatetime').errors.minlength">
+Invalid Email Format
+ 
+         </span>
+</div>
+  </div>
+ 
+    <button type="submit" class="btn btn-success" (click)=saveipoform>SUBMIT</button>
+    </form>
+   </div>
+  </div>
+  </div>
+  <div class="row">  
+    <div class="col-sm-4"></div>  
+    <div class="col-sm-4">  
+        <div [hidden]="!submitted">  
+           <h4>Ipo Added SuccessFully!</h4>  
+           
+        </div>        
+    </div>  
+    
+  </div>  
+  </div>
+  </div>
+  </div>
+  </div>
+   </body>

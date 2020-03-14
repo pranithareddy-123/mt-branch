@@ -1,0 +1,206 @@
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(78, 99, 121);
+   color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(78, 99, 121);
+}
+
+
+  .bg {
+
+
+
+    background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-33.jpg");
+
+
+
+    background-repeat: no-repeat;
+
+
+
+    background-size: cover;
+
+
+
+  }
+</style>
+
+<body>
+  <div class="bg">
+    <div class="container-fluid">
+      <div class="bg-img">
+        <div class="row">
+          <div class="col-lg-5 mx-auto">
+            <h2>Create User</h2>
+            <br>
+            <form [formGroup]="usersaveform" #saveuser1 (ngSubmit)="saveuser(saveuser1)" class="form-container border border-white p-5">
+              <div class="form-group">
+
+                <label for="id"><b>id</b></label>
+
+                <div class="input-container">
+                  <i class="fa fa-id-card icon"></i>
+                <input type="number" autofocus class="form-control" formControlName="id" data-toggle="tooltip"
+                  data-placement="right" title="Enter id ">
+                </div>
+                <div class="alert alert-danger"
+                  *ngIf="(usersaveform.get('id').touched) && (usersaveform.get('id').invalid)" style="margin-top: 5px;">
+                  <span *ngIf="usersaveform.get('id').errors.required">id is Required</span>
+                  <span *ngIf="usersaveform.get('id').errors.minlength">
+                    MinLength Error
+                  </span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="userName"><b>UserName</b></label>
+
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                <input type="text" class="form-control" formControlName="userName" data-toggle="tooltip"
+                  data-placement="right" title="Enter User Name">
+                </div>
+                <div class="alert alert-danger"
+                  *ngIf="(usersaveform.get('userName').touched) && (usersaveform.get('userName').invalid)"
+                  style="margin-top: 5px;">
+                  <span *ngIf="usersaveform.get('userName').errors.required">UserName is Required</span>
+                  <span *ngIf="usersaveform.get('userName').errors.minlength">
+
+                    MinLength Error
+                  </span>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="password"><b>Password</b></label>
+                <div class="input-container">
+                  <i class="fa fa-key icon"></i>
+                <input type="password" class="form-control" formControlName="password" data-toggle="tooltip"
+                  data-placement="right" title="Enter password">
+                </div>
+                <div class="alert alert-danger"
+                  *ngIf="(usersaveform.get('password').touched) && (usersaveform.get('password').invalid)"
+                  style="margin-top: 5px;">
+                  <span *ngIf="usersaveform.get('password').errors.required">password is Required</span>
+                  <span *ngIf="usersaveform.get('password').errors.minlength">
+
+                    Invalid password Format
+
+                  </span>
+                </div>
+              </div>
+              
+
+              <div class="form-group">
+
+                <label for="email"><b>Email</b></label>
+
+                <div class="input-container">
+                  <i class="fa fa-envelope icon"></i>
+                <input type="text" class="form-control" formControlName="email" data-toggle="tooltip"
+                  data-placement="right" title="Enter Email">
+                </div>
+
+                <div class="alert alert-danger"
+                  *ngIf="(usersaveform.get('email').touched) && (usersaveform.get('email').invalid)"
+                  style="margin-top: 5px;">
+                  <span *ngIf="usersaveform.get('email').errors.required"> Email is Required</span>
+                  <span *ngIf="usersaveform.get('email').errors.minlength">
+                    Invalid Email Format
+
+                  </span>
+                </div>
+              </div>
+
+              
+
+
+
+              <div class="form-group">
+                <label for="mobileNumber"><b> Mobile Number</b></label>
+                <div class="input-container">
+                  <i class="fa fa-mobile icon"></i>
+                <input type="text" class="form-control" formControlName="mobileNumber" maxlength="10"
+                  data-toggle="tooltip" data-placement="right" title="Enter Student Email">
+                </div>
+                <div class="alert alert-danger"
+                  *ngIf="(usersaveform.get('mobileNumber').touched) && (usersaveform.get('mobileNumber').invalid)"
+                  style="margin-top: 5px;">
+                  <span *ngIf="usersaveform.get('mobileNumber').errors.required">mobileNumber is Required</span>
+
+                </div>
+              </div>
+              
+              
+              
+              
+              <div class="form-group">
+                <label for="profileImage"><b>profileimage</b></label>
+                <div class="input-container">
+                  <i class="fa fa-image icon"></i>
+         
+                 <input formControlName="profileImage" class="form-control" type="file" (change)="selectFile($event)">
+         </div>
+         
+         
+              </div>  
+
+
+              <button type="submit" class="btn btn-success" (click)=saveuserform [disabled]=!usersaveform.valid>REGISTER</button>
+
+              <div class="col-6">
+                <span class="float-right font-weight-bold">
+                  Already Have an Account?
+                  <a href="/login">
+                    Login
+                  </a>
+                </span>
+              </div>
+
+
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div [hidden]="!submitted">
+            <h4>User Added SuccessFully!</h4>
+
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+  </div>
+</body>

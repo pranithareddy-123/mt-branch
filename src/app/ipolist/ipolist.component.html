@@ -1,0 +1,92 @@
+
+  <style>
+
+    .bg {
+   
+   
+   
+     background-image: url("https://media.istockphoto.com/vectors/widescreen-abstract-financial-chart-with-3d-uptrend-line-graph-arrow-vector-id1133625414");
+   
+   
+   
+     background-repeat: no-repeat;
+   
+   
+   
+     background-size: 100% 140%;
+   
+   
+   
+    }
+   
+   </style>
+  <body>
+    <div class="bg">
+
+
+<br><br><br>
+<div class="container">
+<div class="panel panel-default">
+
+    <div class="panel-body">
+  
+      <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+  
+      [dtTrigger]="dtTrigger" >
+  
+        <thead class="thead-light">
+  
+          <tr>
+            <th>Id</th>
+            <th>CompanyName</th>
+<th>stockExchange</th>
+<th>PricePerShare</th>
+  <th>TotalNumberOfShares</th>
+
+  <th>Remarks</th>
+  <th>Opendatetime</th>
+  </tr>
+  </thead>
+  
+        <tbody>
+  
+           <tr *ngFor="let ipo of ipoList ">
+            <td>{{ipo.id}}</td>
+            <td>{{ipo.companyName}}</td>
+            <td>{{ipo.stockExchange}}</td>
+            <td>{{ipo.priceperShare}}</td>
+        <td>{{ipo.totalnumberofShares}}</td>
+        <td>{{ipo.remarks}}</td>
+        <td>{{ipo.opendatetime}}</td>
+
+        
+        <td><button (click)="updateIpo(ipo)" class="btn btn-primary">Update</button> </td>  
+        <td><button (click)="deleteIpo(ipo)" class="btn btn-danger">Delete</button> </td>
+        
+      
+      </tr>
+  
+        </tbody><br>
+</table>
+
+<div class="text-center"> 
+  <a routerLink="/ipo" class="btn btn-link " role="button">add</a>
+  <a routerLink="/home" class="btn btn-link " role="button">back</a>
+</div>
+    </div>
+</div>
+  
+  </div>
+  <br>
+  <br>
+  <br>
+  <br><br><br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  </div>
+  </body>

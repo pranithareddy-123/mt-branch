@@ -1,0 +1,296 @@
+<style>
+  body,
+  html {
+        height: 100%;
+
+        font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .bg {
+
+        background-image: url("data:image/jpeg;base64,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");
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 102%;
+  }
+
+  * {
+        box-sizing: border-box;
+  }
+</style>
+
+<body>
+  <div class="bg">
+
+<nav class="navbar navbar-expand-sm bg-secondary navbar-white">
+  <ul class="navbar-nav">
+        <li class="nav-item">
+
+        </li>
+  </ul>
+  <ul class="navbar-nav ">
+        <li class="nav-item">
+
+              <a class="nav-link text-white" href="\ipolist">IPOS</a>
+        </li>
+
+        <li class="nav-item">
+              <a class="nav-link text-white" href="comparecompany">COMPARE COMPANY</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link text-white" href="">COMPARE SECTOR</a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link text-white" href="">OTHER</a>
+        </li>
+  </ul>
+
+</nav>
+<br>
+
+                    <div class="container-fluid">
+
+                          <div class="row">
+
+
+
+                                <div class="col-lg-4"></div>
+                                <div class="col-sm-9 col-md-7 col-lg-5">
+                                      <div class="form-container border border-white p-4">
+
+                                      <div [formGroup]="myGroup">
+
+                                            <div class="row">
+
+
+                                                  <div class="col-sm-2"></div>
+                                                  <div class="col-sm-7">
+
+
+
+                                                        <div class="form-group">
+
+
+
+                                                              <label for="Choose" class="text-white">Select Company/sector:</label>
+
+
+
+                                                              <select class="form-control" formControlName="choose"
+                                                                    data-toggle="tooltip" data-placement="right"
+                                                                    title="Select" required="required">
+
+
+
+                                                                    <option value="null">--Select --</option>
+
+
+
+                                                                    <option value="Company">Company</option>
+
+
+
+                                                                    <option value="Sector">Sector</option>
+
+
+
+                                                              </select>
+
+
+
+                                                        </div>
+
+
+
+                                                  </div>
+
+
+
+                                            </div>
+
+
+
+                                            <br>
+
+
+
+                                            <div class="row">
+
+                                                  <div class="col-sm-2"></div>
+
+                                                  <div class="col-sm-7">
+
+
+
+                                                        <div class="form-group">
+
+
+
+                                                              <label for="Sectors"class="text-white">Select Sectors</label>
+
+
+
+                                                              <select class="form-control"
+                                                                    formControlName="sectorName"
+                                                                    (change)='sectorChange()' title="Selectgjhg">
+
+
+
+
+
+                                                                    <option value="NSE">NSE</option>
+
+
+
+                                                                    <option value="BSE">BSE</option>
+
+
+
+                                                              </select>
+
+
+
+                                                        </div>
+
+
+
+                                                  </div>
+
+
+
+                                            </div>
+
+
+
+                                            <br>
+
+
+
+                                            <div class="row">
+
+
+                                                  <div class="col-sm-2"></div>
+                                                  <div class="col-sm-7">
+
+
+
+                                                        <div class="form-group">
+
+
+
+                                                              <label for="name"class="text-white">CompanyName</label>
+
+
+
+                                                              <select class="form-control"
+                                                                    formControlName="companyName" title="Select">
+
+
+
+                                                                    <option *ngFor="let managecompany of companydata "
+                                                                          value="{{managecompany.companyName}}">
+                                                                          {{managecompany.companyName}}
+
+                                                                    </option>
+
+                                                              </select>
+
+
+
+                                                        </div>
+
+
+
+                                                  </div>
+
+
+
+                                            </div>
+                                            <div class="row">
+
+                                                  <div class="col-sm-2"></div>
+
+                                                  <div class="col-sm-7">
+
+
+
+                                                        <div class="form-group">
+                                                              <label for="name"class="text-white">FromDate:</label>
+
+                                                              <div class="input-group">
+
+
+
+                                                                    <input type="date" class="form-control"
+                                                                          formControlName="fromdate"
+                                                                          placeholder="Date" required="required">
+
+                                                                    <div class="alert alert-danger"
+                                                                          *ngIf="(myGroup.controls['fromdate'].touched)&&(myGroup.controls['fromdate'].invalid)"
+                                                                          style="margin-top: 5px;">
+
+                                                                          <span
+                                                                                *ngIf="myGroup.controls['fromdate'].errors.required">Date
+                                                                                is Required</span>
+
+                                                                    </div>
+
+                                                              </div>
+
+                                                        </div>
+                                                  </div>
+                                            </div>
+                                            <div class="row">
+
+                                                  <div class="col-sm-2"></div>
+
+                                                  <div class="col-sm-7">
+
+
+
+                                                        <div class="form-group">
+                                                              <label for="name"class="text-white">ToDate:</label>
+
+                                                              <div class="input-group">
+
+
+
+                                                                    <input type="date" class="form-control"
+                                                                          formControlName="todate"
+                                                                          placeholder="Date" required="required">
+
+                                                                    <div class="alert alert-danger"
+                                                                          *ngIf="(myGroup.controls['todate'].touched)&&(myGroup.controls['todate'].invalid)"
+                                                                          style="margin-top: 5px;">
+
+                                                                          <span
+                                                                                *ngIf="myGroup.controls['todate'].errors.required">Date
+                                                                                is Required</span>
+
+                                                                    </div>
+
+                                                              </div>
+                                                        </div>
+                                                  </div>
+
+                                            </div>
+                                      </div>
+                                </div>
+                          </div>
+                          </div>
+                          <br>
+
+        <div class="text-center">
+              <button type="submit" class="btn btn-success">Generate Map</button>
+        </div>
+
+  </div>
+
+  <div #container id="container"></div>
+
+
+
+</div>
+
+</body>

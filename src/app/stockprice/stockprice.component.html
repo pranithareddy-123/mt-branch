@@ -1,0 +1,115 @@
+
+<body style="background-image: url(https://i.pinimg.com/originals/d7/59/b5/d759b559ad669f9e199f1aaaa381a8ab.jpg);">
+  <br><br><br>
+  
+    <div class="col-sm-9 col-md-6 col-lg-5 mx-auto">
+  
+      <div class="card card-signin my-10">
+    
+       <div class="card-body">
+  
+  
+  
+    <div class="container-fluid">
+      <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+      <h2>Create StockPrice</h2>
+      <br>
+      <form [formGroup]="stockpricesaveform" #saveStockprice1 (ngSubmit)="SaveStockprice(saveStockprice1)">
+          <div class="form-group">
+               <label for="companyCode"><b>CompanyCode</b></label>
+         <input type="text" autofocus class="form-control" formControlName="companyCode" data-toggle="tooltip"
+                data-placement="right" title="Enter company code ">
+                <div class="alert alert-danger" *ngIf="(stockpricesaveform.get('companyCode').touched) && (stockpricesaveform.get('companyCode').invalid)" style="margin-top: 5px;">
+                 <span *ngIf="stockpricesaveform.get('companyCode').errors.required">companyCode is Required</span>
+                <span *ngIf="stockpricesaveform.get('companyCode').errors.minlength">
+                           MinLength Error
+          </span>
+          </div>
+           </div>
+          
+       <div class="form-group">
+     <label for="stockExchange"><b>Stock Exchange</b></label>
+     <input type="text" class="form-control" formControlName="stockExchange" data-toggle="tooltip"
+            data-placement="right" title="Enter stockExchange">
+      <div class="alert alert-danger" *ngIf="(stockpricesaveform.get('stockExchange').touched) && (stockpricesaveform.get('stockExchange').invalid)" style="margin-top: 5px;">
+            <span *ngIf="stockpricesaveform.get('stockExchange').errors.required"> Stock Exchange is Required</span>
+            <span *ngIf="stockpricesaveform.get('stockExchange').errors.minlength">
+     
+             MinLength Error
+            </span>
+           </div>
+      </div>
+     
+     
+          <div class="form-group">
+     
+           <label for="currentPrice"><b>Current Price</b></label>
+     <input type="text" class="form-control" formControlName="currentPrice" data-toggle="tooltip"
+     data-placement="right" title="Enter Current Price">
+     <div class="alert alert-danger" *ngIf="(stockpricesaveform.get('currentPrice').touched) && (stockpricesaveform.get('currentPrice').invalid)" style="margin-top: 5px;">
+    <span *ngIf="stockpricesaveform.get('currentPrice').errors.required">current price is Required</span>
+     <span *ngIf="stockpricesaveform.get('currentPrice').errors.minlength">
+     
+             Invalid  Format
+     
+            </span>
+    </div>
+    </div>
+
+    <div class="form-group">
+     
+      <label for="date"><b>Date</b></label>
+  <input type="date" class="form-control" formControlName="date" data-toggle="tooltip"
+  data-placement="right" title="Enter date ">
+  <div class="alert alert-danger" *ngIf="(stockpricesaveform.get('date').touched) && (stockpricesaveform.get('date').invalid)" style="margin-top: 5px;">
+  <span *ngIf="stockpricesaveform.get('date').errors.required">date is Required</span>
+  <span *ngIf="stockpricesaveform.get('date').errors.minlength">
+  
+        
+  
+       </span>
+  </div>
+  </div>
+  
+  
+    <div class="form-group">
+     
+      <label for="time"><b>Time</b></label>
+  <input type="time" class="form-control" formControlName="time" data-toggle="tooltip"
+  data-placement="right" title="Enter time ">
+  <div class="alert alert-danger" *ngIf="(stockpricesaveform.get('time').touched) && (stockpricesaveform.get('time').invalid)" style="margin-top: 5px;">
+  <span *ngIf="stockpricesaveform.get('time').errors.required">time is Required</span>
+  <span *ngIf="stockpricesaveform.get('time').errors.minlength">
+  </span>
+</div>
+</div>
+    <div class="form-group">
+
+      
+  <label for="uploadfile">Upload Image</label>
+  
+        <input formControlName="uploadfile" class="form-control" type="file" (change)="selectFile($event)">
+  
+     
+     </div>
+  
+  
+  
+       
+  
+
+            <button type="submit" class="btn btn-success" (click)=saveStockpriceform>REGISTER</button>
+      </form>
+     </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  <br><br><br><br><br><br><br><br>
+   </body>
+  
+    
+     
+     
